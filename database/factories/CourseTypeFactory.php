@@ -1,0 +1,24 @@
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\CourseType>
+ */
+class CourseTypeFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array<string, mixed>
+     */
+    public function definition(): array
+    {
+        return [
+            'course_type_name' => $this->faker->name(),
+            'course_type_code' => $this->faker->unique()->regexify('[A-Z]{6}\d{3}'),
+        ];
+    }
+}
